@@ -1,0 +1,249 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  background: #f5f5f5;
+}
+
+.App {
+  width: 90%;
+  max-width: 1000px;
+  min-height: 80vh;
+  background-image: linear-gradient(30deg, #060663, rgb(18, 12, 186), rgb(73, 76, 145), rgb(3, 13, 68));
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5vh auto;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.App h1 {
+  font-size: clamp(2rem, 8vw, 4rem);
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.App p {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  margin: 10px 0;
+  text-align: center;
+}
+
+
+.joinChatContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.joinChatContainer h3 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  margin-bottom: 2rem;
+}
+
+.joinChatContainer input {
+  width: 100%;
+  max-width: 1000px;
+  height: 50px;
+  margin: 10px 0;
+  border: 2px solid #51d658;
+  border-radius: 8px;
+  padding: 0 15px;
+  font-size: 1rem;
+}
+
+.joinChatContainer button {
+  width: 100%;
+  max-width: 1000px;
+  height: 50px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #22bb27;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.joinChatContainer button:hover {
+  background: #a7e2aa;
+}
+
+.chat-window {
+  width: 100%;
+  max-width: 800px;
+  height: 70vh;
+  max-height: 700px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.chat-header {
+  padding: 15px;
+  background: #040442;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background:#ffffff ;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.message {
+  display: flex;
+  max-width: 90%;
+}
+
+#you {
+  justify-content: flex-end;
+  align-self: flex-end;
+}
+
+#other {
+  justify-content: flex-start;
+  align-self: flex-start;
+}
+
+.message-content {
+  padding: 10px 15px;
+  border-radius: 18px;
+  color: rgb(255, 255, 255);
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+#you .message-content {
+  background-color: #48a24c;
+  border-bottom-right-radius: 3px;
+  font-size: 20px;
+}
+
+#other .message-content {
+  background-color: rgb(29, 103, 239);
+  border-bottom-left-radius: 3px;
+}
+
+.message-meta {
+  display: flex;
+  font-size: 10px;
+  margin-top: 5px;
+  color: #666;
+  gap:10px;
+}
+
+#you .message-meta {
+  justify-content: flex-end;
+}
+
+#other .message-meta {
+  justify-content: flex-start;
+}
+
+.chat-footer {
+  display: flex;
+  padding: 10px;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+.chat-footer input {
+  flex: 1;
+  height: 50px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  padding: 0 20px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.chat-footer button {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 50%;
+  background: #43a047;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.chat-footer button:hover {
+  background: #2e7d32;
+}
+
+@media (max-width: 768px) {
+  .App {
+    width: 90%;
+    margin: 2vh auto;
+    border-radius: 15px;
+  }
+
+  .chat-window {
+    height: 65vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    min-height: 100vh;
+  }
+
+  .chat-window {
+    height: calc(100vh - 120px);
+    max-height: none;
+  }
+
+  .message {
+    max-width: 90%;
+  }
+}
+
+
+.hide {
+  display: none !important;
+}
+
+
+.chat-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.chat-body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
